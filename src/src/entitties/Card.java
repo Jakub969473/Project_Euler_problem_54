@@ -34,6 +34,14 @@ public class Card {
 
     }
 
+    public char getSuit() {
+        return suit;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
     public String toString(){
 
         return ""+ value+suit;
