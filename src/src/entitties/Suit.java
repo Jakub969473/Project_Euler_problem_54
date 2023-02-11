@@ -4,12 +4,13 @@ public class Suit {
 
     private Card[]cards;
 
-    public Suit(Card[] cards){
-        this.cards=cards;
-        bubbleSort();
+    public Suit(){
+
     }
 
-    public  int whichSuit(){
+    public  int whichSuit(Card[] cards){
+
+        this.cards = cards;
 
        /*One Pair: Two cards of the same value.
         Two Pairs: Two different pairs.
@@ -49,13 +50,16 @@ public class Suit {
             return 20;
 
         }else if(cards[0].getSuit()==cards[1].getSuit() &&
-                cards[0].getSuit()==cards[2].getSuit() && cards[0].getSuit()==cards[3].getSuit()){
+                cards[0].getSuit()==cards[2].getSuit() &&
+                cards[0].getSuit()==cards[3].getSuit() &&
+                cards[0].getSuit()==cards[4].getSuit()){
 
             return 19;
 
         }else if(cards[0].getValue()==cards[1].getValue()-1 &&
                 cards[0].getValue()==cards[2].getValue()-2 &&
-                cards[0].getValue()==cards[3].getValue()-3){
+                cards[0].getValue()==cards[3].getValue()-3 &&
+                cards[0].getValue()==cards[4].getValue()-4){
 
             return 18;
 
@@ -91,7 +95,7 @@ public class Suit {
                 equals=0;
         }
 
-        return amountOfPairs == 2;
+        return amountOfPairs == 4;
     }
 
     private boolean pair() {
@@ -104,7 +108,7 @@ public class Suit {
                     equals++;
                 }
             }
-            if(equals==3){
+            if(equals==2){
                 return true;
             }else{
                 equals=0;
@@ -192,16 +196,5 @@ public class Suit {
         return false;
     }
 
-    private void bubbleSort()
-    {
-        int n = cards.length;
-        for (int i = 0; i < n - 1; i++)
-            for (int j = 0; j < n - i - 1; j++)
-                if (cards[j].getValue() > cards[j + 1].getValue()) {
-                    // swap arr[j+1] and arr[j]
-                    Card temp = cards[j];
-                    cards[j] = cards[j + 1];
-                    cards[j + 1] = temp;
-                }
-    }
+
 }
