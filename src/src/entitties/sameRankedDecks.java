@@ -8,10 +8,7 @@ public class sameRankedDecks {
 
     int playerDeckValue;
 
-
-
-    public sameRankedDecks(Card [] player1,Card [] player2, int playerDeckValue,
-                           int player2DeckValue){
+    public sameRankedDecks(Card [] player1,Card [] player2, int playerDeckValue){
         this.player1=player1;
 
         this.playerDeckValue=playerDeckValue;
@@ -66,7 +63,13 @@ public class sameRankedDecks {
             equalsP2=0;
         }
 
-        return p1Value>p2Value;
+        if(p1Value>p2Value){
+            return true;
+        }else if(p1Value==p2Value){
+            return highestValue();
+        }else{
+            return false;
+        }
     }
 
     private boolean twoPairs() {
@@ -99,7 +102,13 @@ public class sameRankedDecks {
             equalsP2=0;
         }
 
-        return p1Value>p2Value;
+        if(p1Value>p2Value){
+            return true;
+        }else if(p1Value==p2Value){
+            return highestValue();
+        }else{
+            return false;
+        }
     }
 
     private boolean three() {
@@ -129,7 +138,13 @@ public class sameRankedDecks {
             equalsP2=0;
         }
 
-        return p1Value>p2Value;
+        if(p1Value>p2Value){
+            return true;
+        }else if(p1Value==p2Value){
+            return highestValue();
+        }else{
+            return false;
+        }
     }
 
     private boolean fullHouse() {
@@ -198,7 +213,13 @@ public class sameRankedDecks {
             equalsP2=0;
         }
 
-        return p1Value>p2Value;
+         if(p1Value>p2Value){
+             return true;
+         }else if(p1Value==p2Value){
+             return highestValue();
+         }else{
+             return false;
+         }
     }
 
     public boolean highestValue(){
